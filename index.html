@@ -157,6 +157,9 @@ blockquote p{margin:0}
   .refs li::before{left:14px; width:38px; height:38px}
 }
 </style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}</style>
 </head>
 <body>
 <header class="site-header">
@@ -189,6 +192,7 @@ blockquote p{margin:0}
       <a class="sec" href="#anthropic"><span class="tile">vii</span>Anthropic</a>
       <a class="sec" href="#cox"><span class="tile">I'</span>Cox</a>
       <a class="sec" href="#agency"><span class="tile">ii'</span>Principal</a>
+      <a class="sec" href="#events"><span class="tile">iii'</span>Events</a>
     </nav>
   </div>
  </div>
@@ -653,6 +657,64 @@ Google noticed the physical-resolution problem—but then overcorrected into a f
 <tr><td>V</td><td>Embodied AI</td><td>Action returns to the world (V &rarr; I&prime;)</td><td>Consolidation and habit</td></tr>
 </tbody></table></div>
 <p>If perception is aimed at the principal, it becomes introspection: a standing model of the self, run offline to rehearse choices at epistemic cost. That is the twin&rsquo;s job as described above. The mapping is an analogy, not an identity. The default mode network is not one thing, and it also carries autobiographical memory, which blurs the line between II and V. Generative AI at IV reads as proposals meeting other agents&rsquo; proposals, which is where novelty is actually tested.</p>
+
+<h1 id="events">iii'. Event Stream</h1>
+<p>Formalizing the append-only log. The claim: <strong>the event stream is the output of stage I</strong>. Events do not come from nowhere; they emerge from engines, pass through data, experience and prelingual valence, and leave as utterances (or instrument readings). The twin is built from the stream, so every lossy step below is inherited by everything downstream.</p>
+
+<h3>Definitions</h3>
+<p>For principal \(p\) at time \(t\), in iteration \(n\), with engines \(e^{(n)}_{ijk}\) (the index set is left abstract; the prime in \(e'\) means \(e^{(n+1)}\), the engine transformed by the previous cycle):</p>
+<div class="tbl">\[
+d^{p}_{t}=O_p\big(e^{(n)}_{ijk}\big)+\nu_t,\qquad
+x^{p}_{t}=g_p\big(d^{p}_{t},\,s^{p}_{t-1}\big),\qquad
+v^{p}_{t}=\pi_p\big(x^{p}_{t},\,s^{p}_{t-1}\big),\qquad
+u^{p}_{t}=\sigma_p\big(v^{p}_{t},\,\lambda_t\big)
+\]</div>
+<p>Here \(d\) is data, \(x\) the experiential, \(v\) the prelingual valence, \(u\) the utterance, and \(\lambda_t\) the language, context and listener. The principal&rsquo;s own state evolves, \(s^{p}_{t}=f(s^{p}_{t-1},x^{p}_{t},v^{p}_{t})\), which is why preferences are endogenous. An event wraps what gets recorded:</p>
+<div class="tbl">\[
+\varepsilon_t=\langle\,\mathrm{id},\;t,\;\mathrm{origin},\;\mathrm{kind},\;\mathrm{payload},\;\mathrm{cause}\,\rangle,
+\qquad
+S_t=\bigoplus_{i=1}^{t}\varepsilon_i=S_{t-1}\oplus\varepsilon_t,\quad S_0=\varnothing
+\]</div>
+<p>The sum in \(\mathrm{State}_t=\Sigma\,\mathrm{Event}_i\) is shorthand for an ordered fold. \(\oplus\) is associative with the empty log as identity, but it is <em>not</em> commutative: order carries causality. The twin and the next cycle follow:</p>
+<div class="tbl">\[
+\tilde\theta_t\sim p\big(\theta\mid S_t\big),\qquad
+e^{(n+1)}_{ijk}=\mathcal{T}\big(e^{(n)}_{ijk},\,S^{(n)}_{T}\big)
+\]</div>
+<p>The first equation says the twin is a draw from the representation&rsquo;s parameters given the stream. The second says the ledger of one cycle transforms the engines of the next, which is the V &rarr; I&prime; edge.</p>
+
+<h3>Table 11. Five thinnings between engine and log</h3>
+<div class="tbl"><table>
+<thead><tr><th>Step</th><th>Operator</th><th>What it loses</th></tr></thead>
+<tbody>
+<tr><td>Engine &rarr; Data</td><td>\(O_p\), the observation channel</td><td>Whatever instruments and senses do not reach</td></tr>
+<tr><td>Data &rarr; Experiential</td><td>\(g_p\), filtered by embodied state</td><td>What attention and current state fail to register</td></tr>
+<tr><td>Experiential &rarr; Prelingual</td><td>\(\pi_p\), compression to valence</td><td>Detail that does not move preference</td></tr>
+<tr><td>Prelingual &rarr; Utterance</td><td>\(\sigma_p\), selection into symbols</td><td>What the language and the listener cannot carry</td></tr>
+<tr><td>Utterance &rarr; Event</td><td>The logging policy</td><td>Everything unrecorded, unattended, or never asked</td></tr>
+</tbody></table></div>
+
+<h3>Table 12. Event schema (proposed)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Field</th><th>Values</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>origin</td><td>principal, agent, instrument, gate</td><td>The origin test: who started this change</td></tr>
+<tr><td>kind</td><td>observation, edit, action</td><td>Keeps edits to the ontology apart from readings of it</td></tr>
+<tr><td>payload</td><td>Data, utterance, or operator (insertion, deletion, translocation, permutation, combination)</td><td>The content, in stage III vocabulary for edits</td></tr>
+<tr><td>cause</td><td>References to prior events</td><td>Traces for ratification; paths for rollback</td></tr>
+<tr><td>attestation</td><td>Principal signature, or absent</td><td>Separates ratified from induced changes</td></tr>
+</tbody></table></div>
+
+<h3>Table 13. What follows from the formalization</h3>
+<div class="tbl"><table>
+<thead><tr><th>Property</th><th>Consequence</th></tr></thead>
+<tbody>
+<tr><td>Append-only</td><td>State is a view of the log. A deletion is an event, so the graveyard is kept and the stage V memory is literal.</td></tr>
+<tr><td>Non-commutative fold</td><td>Replay must preserve order. Reordering events changes the state, not just the presentation.</td></tr>
+<tr><td>Selective thinning</td><td>The stream is a missing-not-at-random sample. Inferring \(\theta\) needs a model of the logging process, not just of the engine.</td></tr>
+<tr><td>Shared stream</td><td>Agents write to the same log, tagged by origin. Preference capture shows up as agent-origin events that lead shifts in later principal utterances.</td></tr>
+<tr><td>Iteration</td><td>The ledger of cycle \(n\) is an input to the engines of cycle \(n+1\), so \(e'\) differs from \(e\) by what the principals did.</td></tr>
+</tbody></table></div>
+<p>Not yet defined: what \(i,j,k\) index; whether \(e\) is a point, a set, or a distribution; and whether \(\mathcal{T}\) is known or must itself be learned.</p>
 </main>
 
 <script>
