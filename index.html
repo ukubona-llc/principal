@@ -196,17 +196,17 @@ ol{padding-left:1.4rem; margin:0 0 1.2rem}
       <a href="https://ukubona-llc.github.io/science/"><span class="tile">S</span>Science</a>
       <a href="https://ukubona-llc.github.io/trial/"><span class="tile">T</span>SAPATA</a>
       <p class="wm-label">Voices</p>
-      <a class="sec" href="#i"><span class="tile">I</span>First</a>
-      <a class="sec" href="#ii"><span class="tile">II</span>Second</a>
-      <a class="sec" href="#iii"><span class="tile">III</span>Third</a>
-      <a class="sec" href="#voice4"><span class="tile">IV</span>Reply</a>
+      <a class="sec" href="#i"><span class="tile">1</span>First</a>
+      <a class="sec" href="#ii"><span class="tile">2</span>Second</a>
+      <a class="sec" href="#iii"><span class="tile">3</span>Third</a>
+      <a class="sec" href="#voice4"><span class="tile">4</span>Reply</a>
     </nav>
   </div>
  </div>
 </header>
 
 <main>
-<h1 id="i">I</h1>
+<h1 id="i">1</h1>
 <p>I think the reframe is right, and it fixes something the "<a href="https://ukubona-llc.github.io/">twin</a>" framing leaves vague.</p>
 <p><strong>Why it works.</strong> A twin is a representation, and a representation has no standing to act. "Principal" gives it standing: it holds the preferences, the constraints, the sovereignty ("the ability to compute your own scalar"). Agents are then delegates that execute under those constraints. That matches your chain. The twin lives at the eigenmode, the identity that survives perturbation. The agents work the vector layer, committing and acting, and hand back scalars. The principal is what stays invariant while the agents run.</p>
 <p><strong>Why it opens the door to social scientists.</strong> Principal-agent theory has a century of results on exactly the failures alignment people worry about:</p>
@@ -225,7 +225,7 @@ ol{padding-left:1.4rem; margin:0 0 1.2rem}
 <li><strong>Where does the contract live?</strong> Your NDJSON append-only log is an answer. It is an auditable, immutable record of delegation and action, which is the monitoring mechanism. I'd make that explicit, since it turns a philosophical stance into an architectural one.</li>
 </ol>
 <p>Do you want me to draft a short note for the science page, framing the twin as principal and mapping the classic agency problems onto your five stages?</p>
-<h1 id="ii">II</h1>
+<h1 id="ii">2</h1>
 <p>Yes. And I think the important thing is that <strong>II and III are not merely subsequent stages</strong>. They explain <em>why</em> the agency problem in I exists at all.</p>
 <p>The five levels become much tighter if read as successive answers to five different questions:</p>
 <blockquote>
@@ -437,13 +437,14 @@ I \rightarrow II \rightarrow III \rightarrow IV \rightarrow V
 <p>experience → sampling → variation → selection → memory → institution.</p>
 </blockquote>
 <p>That, to me, is the real conceptual payload of your I–V architecture.</p>
-<h1 id="iii">III</h1>
+<h1 id="iii">3</h1>
 <p>This synthesis resolves the core weakness of standard AI alignment: treating human preferences as fixed scalar functions sitting quietly at the beginning of a pipeline. By framing the architecture as a recursive metabolism (<span class="math inline">\(I \to II \to III \to IV \to V \to I&#39;\)</span>), the text lands on three vital insights that redefine both the economics and engineering of digital twins.</p>
 <p><strong>Endogenous Preference Drift and Cybernetic Capture</strong> The primary risk in classical principal-agent theory is <em>disobedience</em> or <em>moral hazard</em>. But when the feedback loop returns from Stage V (Institutions/Culture) back to <span class="math inline">\(I&#39;\)</span> (the transformed Engine), the threat shifts entirely. The agency hazard here isn't merely that an agent fails to execute a command; it is <strong>preference capture</strong>. If agent actions shape the environment and institutions that subsequently inform the principal’s future experience, the agent can quietly engineer the sampling frame (<span class="math inline">\(II\)</span>) so that the principal learns to want whatever is cheapest for the agent to supply. Alignment becomes an iterative governance challenge against self-reinforcing feedback loops, rather than a static optimization problem.</p>
 <p><strong>Error as Grammar Creation, Not Parameter Tuning</strong> Section II’s treatment of prediction error (<span class="math inline">\(\epsilon_t\)</span>) cuts straight through standard machine learning dogma. In classical training, error is merely residual loss to be driven toward zero via local gradient descent. In this framework, error represents an <strong>ontological rupture</strong>—proof that the lossy sample (<span class="math inline">\(II\)</span>) has failed to capture the embodied engine (<span class="math inline">\(I\)</span>). Stage III’s operators (insertions, translocations, permutations) frame adaptation not as fine-tuning existing weights, but as altering the underlying grammar. Just as a rootless dominant seventh or an altered extension in music creates a new harmonic space rather than "fixing" a wrong note, generative structural variation turns execution failures into expanded system capacity.</p>
 <p><strong>The Immutable Ledger as the Invariant</strong> If the engine itself is historically transformed (<span class="math inline">\(I \to I&#39;\)</span>), what prevents the system from suffering identity amnesia or drifting into total incoherence? This is where the physical architecture— specifically an append-only, auditable event log—functions as the backbone of Stage V. The "graveyard" and the institutional memory cannot merely be weights that get overwritten; they require an unalterable history of state transitions. The log acts as the invariant anchor, preserving provenance so that as the principal evolves, the system can distinguish between genuine organic adaptation and lossy distortion.</p>
 <p>If you are drafting the closing argument for Section III, how do you intend to operationalize the boundary in Stage IV between <strong>generative dissonance</strong> (adaptation that expands the grammar) and <strong>destructive corruption</strong> (dissonance that collapses the system)?</p>
-<hr id="voice4" />
+<hr />
+<h1 id="voice4">4</h1>
 <p>Each voice adds something the others lack, and II corrects me in a way I accept.</p>
 <p><strong>II fixes my framing.</strong> I said the twin is the principal. II's version is better: the principal is the embodied, historically formed engine, the twin is a lossy sample of it, and agents act downstream of the sample. That removes my first pressure point (principal or model of the principal?) by making the nesting explicit. It also exposes something II doesn't say outright. Contracting theory needs a principal who can state what they want, but the engine can't sign anything. The principal speaks only through <em>utterance</em>, which is your stage I's last step and already a selection. So the agency problem starts before any agent exists, in the gap between the principal and their own utterance. That belongs on the page.</p>
 <p><strong>II's other gift is "error is information about the sample."</strong> It cuts against reducing alignment to loss minimization. I'd add a caution: not all residual is ontological rupture, and much of it is plain noise. Without a way to tell the two apart, "error as grammar creation" can't be falsified, and a skeptical social scientist will say so.</p>
