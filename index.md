@@ -17,7 +17,7 @@
 <!-- Usage block:  $$\int_0^\infty e^{-x} dx = 1$$ -->
 
 # I
-I think the reframe is right, and it fixes something the "twin" framing leaves vague.
+I think the reframe is right, and it fixes something the "[twin](https://ukubona-llc.github.io/)" framing leaves vague.
 
 **Why it works.** A twin is a representation, and a representation has no standing to act. "Principal" gives it standing: it holds the preferences, the constraints, the sovereignty ("the ability to compute your own scalar"). Agents are then delegates that execute under those constraints. That matches your chain. The twin lives at the eigenmode, the identity that survives perturbation. The agents work the vector layer, committing and acting, and hand back scalars. The principal is what stays invariant while the agents run.
 
@@ -357,3 +357,29 @@ Section II’s treatment of prediction error ($\epsilon_t$) cuts straight throug
 If the engine itself is historically transformed ($I \to I'$), what prevents the system from suffering identity amnesia or drifting into total incoherence? This is where the physical architecture— specifically an append-only, auditable event log—functions as the backbone of Stage V. The "graveyard" and the institutional memory cannot merely be weights that get overwritten; they require an unalterable history of state transitions. The log acts as the invariant anchor, preserving provenance so that as the principal evolves, the system can distinguish between genuine organic adaptation and lossy distortion.
 
 If you are drafting the closing argument for Section III, how do you intend to operationalize the boundary in Stage IV between **generative dissonance** (adaptation that expands the grammar) and **destructive corruption** (dissonance that collapses the system)?
+
+---
+
+Each voice adds something the others lack, and II corrects me in a way I accept.
+
+**II fixes my framing.** I said the twin is the principal. II's version is better: the principal is the embodied, historically formed engine, the twin is a lossy sample of it, and agents act downstream of the sample. That removes my first pressure point (principal or model of the principal?) by making the nesting explicit. It also exposes something II doesn't say outright. Contracting theory needs a principal who can state what they want, but the engine can't sign anything. The principal speaks only through *utterance*, which is your stage I's last step and already a selection. So the agency problem starts before any agent exists, in the gap between the principal and their own utterance. That belongs on the page.
+
+**II's other gift is "error is information about the sample."** It cuts against reducing alignment to loss minimization. I'd add a caution: not all residual is ontological rupture, and much of it is plain noise. Without a way to tell the two apart, "error as grammar creation" can't be falsified, and a skeptical social scientist will say so.
+
+**III's gift is preference capture.** It names the hazard II implies: the agent shapes the sampling frame, and the principal learns to want what is cheapest to supply. This has real literature behind it: adaptive preferences (Elster's "sour grapes"), endogenous preference formation, and recommender-system manipulation. It is the strongest bridge to the social scientists you want, and it is more specific than "misalignment."
+
+**Where III overreaches is the ledger.** An append-only log preserves provenance, not truth or identity. Three problems follow:
+- The agent can append misleading entries.
+- The log is itself a sample.
+- It records drift without judging it.
+
+The log makes audit possible, but you still need a criterion. At minimum, entries should be signed or attested by the principal, and the log should record who initiated each change.
+
+**On III's closing question (generative dissonance vs destructive corruption)**, here is where I'd start:
+1. **Causal origin.** The ledger can show whether a change in the principal's preferences or sampling frame originated with the principal or was induced by an agent action. Agent-induced changes get a higher bar.
+2. **Reflective ratification.** Would the principal, shown the full trace, endorse the change? This is the practical version of "the ear trained by the tradition accepts the dissonance."
+3. **Reversibility.** Dissonance that can be unwound is cheap to try. This is your twin-goes-first logic applied to the principal's own evolution.
+
+Stage V is the ultimate test, but it arrives too late, which is why these work as ex ante proxies.
+
+For the science page, I'd structure it as the nested chain (principal → utterance → sample/twin → agent → action → error → adaptation → institution → principal′), then list the classic agency problems at each link, then put preference capture and the IV criterion last as the open problem. Want me to draft it that way?
